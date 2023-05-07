@@ -1,10 +1,12 @@
 from flask import Flask, request, abort
+import socket
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    html = f"<h1>My WebApp!</h1> Hello World! Served from <b>{socket.gethostname()}</b>"
+    hostname = socket.gethostname()
+    html = f"<h1>Hello World!</h1> Served from <b>{hostname}</b>"
     return html
 
 if __name__ == '__main__':
