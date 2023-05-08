@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKERHUB_USERNAME: wededo4644
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USER }}
   DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
@@ -16,8 +16,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Build Docker Image
-        run: docker build -t wededo4644/flask-app:latest .
+        run: docker build -t "${DOCKERHUB_USERNAME}"/flask-app:latest .
       - name: Login to DockerHub
         run: echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
       - name: Push Docker Image to DockerHub
-        run: docker push wededo4644/flask-app:latest
+        run: docker push "${DOCKERHUB_USERNAME}"/flask-app:latest
