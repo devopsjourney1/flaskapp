@@ -20,4 +20,4 @@ jobs:
       - name: Login to DockerHub
         run: echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
       - name: Push Docker Image to DockerHub
-        run: docker push <your DockerHub username>/<image name>:latest
+        run: docker push wededo4644/flask-app:latest
