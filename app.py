@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     hostname = socket.gethostname()
-    html = f"<h1>Hello World!!</h1> This page is served from <b>{hostname}</b><hr>v1.0.1"
+    html = f"<h1>Hello World!!</h1> This page is served from <b>{hostname}</b><hr>v1.0.2"
     return html
 
 if __name__ == '__main__':
