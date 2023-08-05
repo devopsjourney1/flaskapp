@@ -15,7 +15,7 @@ service:
   - key: tier
     value: frontend
   - key: appname
-    name: flaskapp
+    value: flaskapp
   repositories:
   - name: devopsjourney1/flaskapp
     path: "/"
